@@ -5,16 +5,16 @@ API_TOKEN = '7862768565:AAHhyKcHzv4Cjjfs2BgNCc5Zj14nFrX4XCc'
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = update.effective_user.id   
-    user_name = update.effective_user.username  
+    user_name = update.effective_user.username 
     chat_id = update.effective_chat.id
     chat_title = update.effective_chat.title if update.effective_chat.type == 'group' else None 
 
-    # Gửi tin nhắn trả lời
+
     await update.message.reply_text(
-        f"ID Người Dùng: {user_id}\n"
-        f"Tên Người Dùng: {user_name}\n"
-        f"ID Nhóm: {chat_id}\n"
-        f"Tên Nhóm: {chat_title if chat_title else 'Không có nhóm'}"
+        f"UserID: {user_id}\n"
+        f"Username: {user_name}\n"
+        f"GroupID: {chat_id}\n"
+        f"GroupName: {chat_title}\n"
     )
 
 def main():
